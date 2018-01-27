@@ -1,21 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import About from './views/About';
-import Inbox from './views/Inbox';
+import Routers from './router/';
 
+import { Router,  browserHistory} from 'react-router'
 
+let routes = Routers
 
-import { Router, Route, browserHistory} from 'react-router'
-
-ReactDOM.render(
-	<Router history={browserHistory}>
-	    <Route path="/" component={App}>
-	      <Route path="about" component={About} />
-	      <Route path="inbox" component={Inbox} />
-	    </Route>
-  	</Router>, document.getElementById('root'));
+ReactDOM.render(<Router routes={routes} history={browserHistory}></Router>, document.getElementById('root'));
 registerServiceWorker();

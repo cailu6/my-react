@@ -30,10 +30,11 @@ class App extends Component {
       <div>
         <h1>App</h1>
         <ul>
+          <li><Link to="/button">Button</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/inbox">Inbox</Link></li>
         </ul>
-        <h6>{this.props.children}</h6>
+        <div>{this.props.children}</div>
       </div>
     );
   }
